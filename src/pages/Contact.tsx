@@ -1,4 +1,4 @@
-import { useState, FormEvent } from 'react';
+import { useState, type FormEvent } from 'react';
 import axios from 'axios';
 import type { ContactForm } from '../types';
 
@@ -40,7 +40,7 @@ const Contact = () => {
         setTimeout(() => setSubmitStatus('idle'), 5000);
 	  } else {
         setSubmitStatus('error');
-        setErrorMessage(data.error || 'Failed to send message');
+        setErrorMessage(response.error || 'Failed to send message');
       }
     } catch (error) {
       setSubmitStatus('error');
