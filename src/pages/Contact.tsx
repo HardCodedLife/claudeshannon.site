@@ -40,7 +40,7 @@ const Contact = () => {
         setTimeout(() => setSubmitStatus('idle'), 5000);
 	  } else {
         setSubmitStatus('error');
-        setErrorMessage(response.error || 'Failed to send message');
+        setErrorMessage(response.data?.error || 'Failed to send message');
       }
     } catch (error) {
       setSubmitStatus('error');
